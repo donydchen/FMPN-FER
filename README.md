@@ -27,7 +27,11 @@ The training phase mainly contains two stages, including training the generator 
 #### Pretrain the Facial-Motion Mask Generator (FMG)
 
 ``` sh
-python main.py --mode train --data_root datasets/CKPlus --train_csv train_ids_0.csv --print_losses_freq 4 --use_data_augment --visdom_env res_baseline_ckp_0 --niter 150 --niter_decay 150 --gpu_ids 0 --model res_baseline --solver resface --img_nc 1 
+python main.py --mode train --data_root datasets/CKPlus --train_csv train_ids_0.csv \
+    --print_losses_freq 4 --use_data_augment --visdom_env res_baseline_ckp_0 \
+    --niter 150 --niter_decay 150 --gpu_ids 0 \
+    --model res_baseline --solver resface --img_nc 1 \
+    /
 ```
 
 #### Jointly Train the Facial-Motion Prior Network
@@ -35,21 +39,29 @@ python main.py --mode train --data_root datasets/CKPlus --train_csv train_ids_0.
 Load the saved weight for the FMG pertained in the previous stage, and ImageNet pretrained weight for the Classifer Net.
 
 ```sh
-python main.py --mode train --data_root datasets/CKPlus --train_csv train_ids_0.csv --print_losses_freq 4 --use_data_augment --visdom_env res_cls_ckp_0 --niter 100 --niter_decay 100 --gpu_ids 0 --model res_cls --solver res_cls --lambda_resface 0.1 --batch_size 16 --backend_pretrain --load_model_dir ckpts/CKPlus/res_baseline/fold_0/190117_165651 --load_epoch 300
+python main.py --mode train --data_root datasets/CKPlus --train_csv train_ids_0.csv \
+    --print_losses_freq 4 --use_data_augment --visdom_env res_cls_ckp_0 --niter 100 \
+    --niter_decay 100 --gpu_ids 0 --model res_cls --solver res_cls --lambda_resface 0.1 \
+    --batch_size 16 --backend_pretrain \
+    --load_model_dir ckpts/CKPlus/res_baseline/fold_0/190117_165651 --load_epoch 300 \
+    /
 ```
 
 ### Testing 
 
 ``` sh
-python main.py --mode test --data_root datasets/CKPlus --test_csv test_ids_0.csv --gpu_ids 0 --model res_cls --solver res_cls --batch_size 4 --load_model_dir ckpts/CKPlus/res_cls/fold_0/190118_170050 --load_epoch 200 
+python main.py --mode test --data_root datasets/CKPlus --test_csv test_ids_0.csv \
+    --gpu_ids 0 --model res_cls --solver res_cls --batch_size 4 \
+    --load_model_dir ckpts/CKPlus/res_cls/fold_0/190118_170050 --load_epoch 200 \
+    /
 ```
 
 ## Datasets
 
-* The pseudo ground truth facial motion masks for dataset CK+, MMI and AffectNet are presented in `/datasets` folder.
-* Training and Testing datasets splits are located in `/datasets` folder, 10-fold cross validation is used in the project as a general approach.
+* The pseudo ground truth facial motion masks for dataset CK+, MMI and AffectNet are presented in `/datasets`.
+* Training and Testing datasets splits are located in `/datasets`, 10-fold cross validation is used in the project as a general approach.
 
-## Detail Results
+## Results Detail
 
 10 folds accuracy for CK+, MMI and AffectNet.
 
