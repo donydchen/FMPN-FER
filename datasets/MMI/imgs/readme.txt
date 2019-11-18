@@ -1,0 +1,1 @@
+Preprocess the MMI dataset, and store all images directly into this folder.
