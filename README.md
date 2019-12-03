@@ -2,13 +2,13 @@
 
 <p align="left">
 	<img src="https://img.shields.io/badge/Status-Release-gold.svg?style=flat-square" alt="Status">
-	<img src="https://img.shields.io/badge/Platform-Linux | macOS-lightgrey.svg?style=flat-square" alt="Platform">
+	<img src="https://img.shields.io/badge/Platform-Linux-lightgrey.svg?style=flat-square" alt="Platform">
 	<img src="https://img.shields.io/badge/PyTorch Version-0.4.1-blue.svg?style=flat-square" alt="PyTorch">
 	<img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License">
 </p>
 
-Official PyTorch Implementation for **Facial Motion Prior Networks for Facial Expression Recognition** by <a href="https://donydchen.github.io">Yuedong Chen</a>, <a href="https://jianfeng1991.github.io/personal">Jianfeng Wang, <a href="https://www.researchgate.net/profile/Shikai_Chen3">Shikai Chen</a>, Zhongchao Shi, and <a href="https://www.ntu.edu.sg/home/asjfcai/">Jianfei Cai</a>. 
-<br>VCIP 2019, Oral
+Official PyTorch Implementation of **Facial Motion Prior Networks for Facial Expression Recognition** by <a href="https://donydchen.github.io">Yuedong Chen</a>, <a href="https://jianfeng1991.github.io/personal">Jianfeng Wang, <a href="https://www.researchgate.net/profile/Shikai_Chen3">Shikai Chen</a>, Zhongchao Shi, and <a href="https://www.ntu.edu.sg/home/asjfcai/">Jianfei Cai</a>. 
+<br>VCIP 2019, Oral, \[[arXiv](https://arxiv.org/abs/1902.08788)\]
 
 ![FMPN Model Structure](images/proposed_model.png)
 
@@ -80,8 +80,9 @@ If you use this code for your research, please cite our paper <a href="https://a
 @article{chen2019facial,
   title={Facial Motion Prior Networks for Facial Expression Recognition},
   author={Chen, Yuedong, Jianfeng Wang, Shikai Chen, Zhongchao Shi, and Jianfei Cai},
-  journal={VCIP},
-  year={2019}
+  journal={IEEE Visual Communications and Image Processing (VCIP)},
+  year={2019},
+  organization={IEEE}
 }
 ```
 
