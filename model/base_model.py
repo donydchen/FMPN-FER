@@ -110,7 +110,7 @@ class BaseModel:
                 load_path = os.path.join(self.opt.load_model_dir, load_filename)
                 assert os.path.isfile(load_path), "File '%s' does not exist." % load_path
                 
-                pretrained_state_dict = torch.load(load_path, map_location=str(self.device))
+                pretrained_state_dict = torch.load(load_path, map_location=str(self.device), weights_only=True)
                 if hasattr(pretrained_state_dict, '_metadata'):
                     del pretrained_state_dict._metadata
 
